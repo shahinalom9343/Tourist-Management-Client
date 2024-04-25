@@ -1,6 +1,13 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut().then().catch();
+  };
   const listItems = (
     <>
       <li>
@@ -47,9 +54,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{listItems}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="/signin">
-          <button className="btn btn-secondary">Login </button>
-        </Link>
+        {user ? (
+          <div className="flex gap-3">
+            <img
+              alt="Tailwind CSS Navbar component"
+              className="w-12 h-12 rounded-full"
+              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+            />
+            <button className="btn btn-secondary" onClick={handleSignOut}>
+              Sign Out{" "}
+            </button>
+          </div>
+        ) : (
+          <Link to="/signin">
+            <button className="btn btn-secondary">Login </button>
+          </Link>
+        )}
       </div>
     </div>
   );

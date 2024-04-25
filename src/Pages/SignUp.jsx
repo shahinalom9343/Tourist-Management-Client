@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -17,6 +18,13 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
+        Swal.fire({
+          icon: "success",
+          title: "User Created Successfully !!",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        form.reset();
       })
       .catch((error) => {
         console.error(error);
