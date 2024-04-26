@@ -22,6 +22,9 @@ const Navbar = () => {
       <li>
         <NavLink to="/addspots">Add Tourist Spots</NavLink>
       </li>
+      <li>
+        <NavLink to="/contact">Contact</NavLink>
+      </li>
     </>
   );
   return (

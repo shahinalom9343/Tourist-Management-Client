@@ -7,6 +7,7 @@ import SignUp from "../Pages/SignUp";
 import About from "../Pages/About";
 import AllTouristSpot from "../Pages/AllTouristSpot";
 import AddTouristSpot from "../Pages/AddTouristSpot";
+import Contact from "../Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
     ],
   },

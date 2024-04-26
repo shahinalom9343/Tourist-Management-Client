@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -75,14 +78,20 @@ const SignUp = () => {
             className="input input-bordered input-accent w-full"
           />
         </div>
-        <div className="space-y-1 text-sm ">
+        <div className="space-y-1 text-sm relative">
           <label className="block dark:text-gray-600">Password :</label>
           <input
-            type="text"
+            type={showPassword ? "text" : "password"}
             name="password"
             placeholder="Password"
             className="input input-bordered input-accent w-full"
           />
+          <span
+            className="absolute text-2xl bottom-3 right-4"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+          </span>
         </div>
         <div>
           <button className="btn btn-accent w-full">Register</button>
