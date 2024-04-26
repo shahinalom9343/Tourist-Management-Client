@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,6 +10,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -39,18 +40,24 @@ const SignUp = () => {
           timer: 2000,
         });
         form.reset();
+        navigate("/signin");
       })
       .catch((error) => {
         console.error(error);
       });
   };
   return (
-    <div className="w-full max-w-xl shadow-lg mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
+    <div className="w-full max-w-5xl shadow-2xl my-2 mx-auto md:px-16 py-4 lg:px-20 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
       <Helmet>
         <title>Tourist | Register</title>
       </Helmet>
-      <h1 className="text-2xl font-bold text-center">Please Register</h1>
-      <form className="space-y-6 px-6" onSubmit={handleSignUp}>
+      <h1 className="text-2xl font-bold text-center text-cyan-400">
+        Please Register Here
+      </h1>
+      <form
+        className="space-y-6 px-6 bg-zinc-200 p-6 rounded-2xl"
+        onSubmit={handleSignUp}
+      >
         <div className="space-y-1 text-sm">
           <label className="block dark:text-gray-600">Name :</label>
           <input
@@ -97,17 +104,19 @@ const SignUp = () => {
           </span>
         </div>
         <div>
-          <button className="btn btn-accent w-full">Register</button>
+          <button className="btn btn-accent w-full text-white font-extrabold text-lg">
+            Register
+          </button>
         </div>
       </form>
-      <div className="flex items-center pt-4 space-x-1">
+      <div className="flex items-center pt-4 space-x-1 bg-red-50">
         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
         <p className="px-3 text-sm dark:text-gray-600">
           Login with social accounts
         </p>
         <div className="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
       </div>
-      <div className="flex justify-center space-x-4">
+      <div className="flex justify-center space-x-4 bg-red-50">
         <button aria-label="Log in with Google" className="p-3 rounded-sm">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -138,7 +147,10 @@ const SignUp = () => {
       </div>
       <p className="text-xs text-center sm:px-6 dark:text-gray-600">
         Already have an account?
-        <Link to="/signin" className="underline dark:text-gray-800">
+        <Link
+          to="/signin"
+          className="underline text-lg text-indigo-500 font-bold dark:text-gray-800"
+        >
           Login
         </Link>
       </p>

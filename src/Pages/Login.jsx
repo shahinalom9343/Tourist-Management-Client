@@ -23,17 +23,18 @@ const Login = () => {
   const githubProvider = new GithubAuthProvider();
 
   // google login
-  const handleGoogleSignIn = () => {
+  const handleGoogleSignIn = (e) => {
     signInWithPopup(auth, googleProvider).then((result) => {
       const currentUser = result.user;
       setUser(currentUser);
-      navigate(location?.state ? location.state : "/");
+      // navigate(location?.state ? location.state : "/");
       Swal.fire({
         icon: "success",
         title: "Login Successful !!!",
         showConfirmButton: false,
         timer: 2000,
       });
+      navigate("/");
     });
   };
 
@@ -42,7 +43,7 @@ const Login = () => {
     signInWithPopup(auth, githubProvider).then((result) => {
       const currentUser = result.user;
       setUser(currentUser);
-      navigate(location?.state ? location.state : "/");
+      // navigate(location?.state ? location.state : "/");
       Swal.fire({
         icon: "success",
         title: "Login Successful !!!",
@@ -57,7 +58,7 @@ const Login = () => {
     signInWithPopup(auth, facebookProvider).then((result) => {
       const currentUser = result.user;
       setUser(currentUser);
-      navigate(location?.state ? location.state : "/");
+      // navigate(location?.state ? location.state : "/");
       Swal.fire({
         icon: "success",
         title: "Login Successful !!!",
@@ -83,6 +84,7 @@ const Login = () => {
           timer: 2000,
         });
         form.reset();
+        navigate("/");
       })
       .catch(() => {
         Swal.fire({
@@ -95,13 +97,13 @@ const Login = () => {
   };
   return (
     <div className="border-2 shadow-md w-full max-w-md p-4 rounded-md mx-auto my-10 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
-      <h2 className="mb-3 text-3xl font-semibold text-center">
+      <h2 className="mb-3 text-3xl font-bold text-center text-green-700">
         Login to your account
       </h2>
       <form className="space-y-8 " onSubmit={handleSignIn}>
         <div className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm">
+            <label htmlFor="email" className="block text-lg font-medium">
               Email address
             </label>
             <input
@@ -115,7 +117,7 @@ const Login = () => {
           </div>
           <div className="space-y-2">
             <div className="flex justify-between">
-              <label htmlFor="password" className="text-sm">
+              <label htmlFor="password" className="text-lg font-medium">
                 Password
               </label>
             </div>
@@ -136,7 +138,7 @@ const Login = () => {
           Sign in
         </button>
       </form>
-      <div className="flex items-center w-full my-4">
+      <div className="flex items-center w-full my-4 ">
         <hr className="w-full dark:text-gray-600" />
         <p className="px-3 dark:text-gray-600">OR</p>
         <hr className="w-full dark:text-gray-600" />
@@ -146,7 +148,7 @@ const Login = () => {
         <button
           onClick={handleGoogleSignIn}
           type="button"
-          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-gray-600 text-white flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaGoogle></FaGoogle>
           <p>Login with Google</p>
@@ -155,7 +157,7 @@ const Login = () => {
         <button
           onClick={handleGithubLogIn}
           role="button"
-          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-gray-600 text-white flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaGithub></FaGithub>
           <p>Login with GitHub</p>
@@ -164,7 +166,7 @@ const Login = () => {
         <button
           onClick={handleFacebookLogIn}
           role="button"
-          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-gray-600 text-white flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaFacebook></FaFacebook>
           <p>Login with Facebook</p>

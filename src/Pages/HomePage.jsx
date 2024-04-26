@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <div>
       <Helmet>
-        <title>Tourist | Home</title>
+        <title>Explore Asia | Home</title>
       </Helmet>
       <Banner></Banner>
       <div className="mx-auto text-center my-10 space-y-4 ">

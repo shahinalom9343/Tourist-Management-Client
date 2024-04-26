@@ -49,9 +49,9 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 shadow-xl">
+    <div className="navbar bg-red-50 shadow-xl font-bold md:px-10">
       <div className="navbar-start">
-        <div className="dropdown">
+        <div className="dropdown z-10">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,16 +77,19 @@ const Navbar = () => {
         </div>
         <img
           src="https://i.ibb.co/3Ck1PVz/weblogo.png"
-          className="h-10 w-10"
+          className="h-10 w-10 md:block hidden"
           alt=""
         />
-        <a className="btn btn-ghost text-xl">Explore Asia</a>
+        <a className="btn btn-ghost sm:text-2xl lg:text-3xl">
+          <span className="text-amber-500 font-extrabold">Explore </span>
+          <span className="text-orange-800 font-extrabold">Asia</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{listItems}</ul>
       </div>
       <div className="navbar-end">
-        <div className="text-5xl mr-4">
+        <div className="text-5xl mr-1 hidden md:block">
           <input
             type="checkbox"
             onChange={handleTheme}
@@ -94,7 +97,7 @@ const Navbar = () => {
           />
         </div>
         {user ? (
-          <div className="flex gap-3">
+          <div className="flex gap-1">
             <a className="my-anchor-element">
               <img
                 alt="Tailwind CSS Navbar component"
@@ -118,12 +121,18 @@ const Navbar = () => {
             </button>
           </div>
         ) : (
-          <div className=" flex gap-1">
-            <Link to="/signin" className="btn btn-secondary">
+          <div className="hidden lg:block space-x-1">
+            <Link
+              to="/signin"
+              className="btn btn-secondary rounded-2xl font-extrabold"
+            >
               Login{" "}
             </Link>
 
-            <Link to="signup" className="btn btn-accent">
+            <Link
+              to="signup"
+              className=" btn btn-primary rounded-2xl font-extrabold"
+            >
               Register{" "}
             </Link>
           </div>
