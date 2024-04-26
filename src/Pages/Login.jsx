@@ -94,11 +94,11 @@ const Login = () => {
       });
   };
   return (
-    <div className="w-full max-w-md p-4 rounded-md mx-auto shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+    <div className="border-2 shadow-md w-full max-w-md p-4 rounded-md mx-auto my-10 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
       <h2 className="mb-3 text-3xl font-semibold text-center">
         Login to your account
       </h2>
-      <form className="space-y-8" onSubmit={handleSignIn}>
+      <form className="space-y-8 " onSubmit={handleSignIn}>
         <div className="space-y-4">
           <div className="space-y-2">
             <label htmlFor="email" className="block text-sm">
@@ -109,6 +109,7 @@ const Login = () => {
               name="email"
               id="email"
               placeholder="Enter Your Email"
+              required
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
@@ -123,13 +124,14 @@ const Login = () => {
               name="password"
               id="password"
               placeholder="*****"
+              required
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
         </div>
         <button
           type="submit"
-          className="w-full btn btn-secondary dark:bg-violet-600 dark:text-gray-50"
+          className="w-full btn btn-secondary dark:bg-violet-600 dark:text-gray-50 text-2xl font-bold"
         >
           Sign in
         </button>
@@ -140,11 +142,11 @@ const Login = () => {
         <hr className="w-full dark:text-gray-600" />
       </div>
 
-      <div className="my-6 space-y-4">
+      <div className="my-6 space-y-4  ">
         <button
           onClick={handleGoogleSignIn}
           type="button"
-          className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaGoogle></FaGoogle>
           <p>Login with Google</p>
@@ -153,7 +155,7 @@ const Login = () => {
         <button
           onClick={handleGithubLogIn}
           role="button"
-          className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaGithub></FaGithub>
           <p>Login with GitHub</p>
@@ -162,21 +164,28 @@ const Login = () => {
         <button
           onClick={handleFacebookLogIn}
           role="button"
-          className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+          className="bg-lime-400 text-violet-500 flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
         >
           <FaFacebook></FaFacebook>
           <p>Login with Facebook</p>
         </button>
       </div>
-      <p className="text-sm text-center dark:text-gray-600">
-        New Here? Please
-        <Link
-          to="/signup"
-          className="focus:underline hover:underline text-green-600 font-bold"
-        >
-          Register
-        </Link>
-      </p>
+      <div className="flex justify-evenly">
+        {" "}
+        <div>
+          <p className=" text-center font-bold text-lg dark:text-gray-600">
+            New Here? Please{" "}
+          </p>
+        </div>
+        <div>
+          <Link
+            to="/signup"
+            className=" text-lg  focus:underline hover:underline  font-bold text-cyan-400"
+          >
+            Register
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

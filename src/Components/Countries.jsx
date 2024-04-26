@@ -5,6 +5,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "./country.css";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import Marquee from "react-fast-marquee";
 
 const Countries = () => {
   return (
@@ -35,94 +36,74 @@ const Countries = () => {
           />
         </SwiperSlide>
       </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
-      <div className="relative">
-        <SwiperSlide>
-          <p className="absolute text-5xl font-bold text-white top-28 left-6">
-            Bangladesh
-          </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
-        </SwiperSlide>
-      </div>
+      <Marquee speed={30} loop={Infinity} direction="left">
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+        <div className="relative">
+          <SwiperSlide>
+            <p className="absolute text-5xl font-bold text-white top-28 left-6">
+              Bangladesh
+            </p>
+            <img
+              className="rounded-xl"
+              src="https://swiperjs.com/demos/images/nature-1.jpg"
+            />
+          </SwiperSlide>
+        </div>
+      </Marquee>
     </Swiper>
   );
 };

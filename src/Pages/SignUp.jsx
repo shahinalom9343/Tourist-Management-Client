@@ -58,6 +58,7 @@ const SignUp = () => {
             name="name"
             placeholder="Enter your name"
             className="input input-bordered input-accent w-full"
+            required
           />
         </div>
         <div className="space-y-1 text-sm">
@@ -67,6 +68,7 @@ const SignUp = () => {
             name="email"
             placeholder="Your Email"
             className="input input-bordered input-accent w-full"
+            required
           />
         </div>
         <div className="space-y-1 text-sm">
@@ -85,6 +87,7 @@ const SignUp = () => {
             name="password"
             placeholder="Password"
             className="input input-bordered input-accent w-full"
+            required
           />
           <span
             className="absolute text-2xl bottom-3 right-4"

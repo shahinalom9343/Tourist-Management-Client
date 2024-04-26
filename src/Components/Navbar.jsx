@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
-import { IoToggleSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -11,7 +10,7 @@ const Navbar = () => {
 
   const handleTheme = (e) => {
     if (e.target.checked) {
-      setTheme("synthwave");
+      setTheme("dark");
     } else {
       setTheme("light");
     }
@@ -40,6 +39,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/addspots">Add Tourist Spots</NavLink>
+      </li>
+      <li>
+        <NavLink to="/mylist">My List</NavLink>
       </li>
       <li>
         <NavLink to="/contact">Contact</NavLink>
@@ -73,6 +75,11 @@ const Navbar = () => {
             {listItems}
           </ul>
         </div>
+        <img
+          src="https://i.ibb.co/3Ck1PVz/weblogo.png"
+          className="h-10 w-10"
+          alt=""
+        />
         <a className="btn btn-ghost text-xl">Explore Asia</a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -83,7 +90,6 @@ const Navbar = () => {
           <input
             type="checkbox"
             onChange={handleTheme}
-            value="synthwave"
             className="toggle flex items-center theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"
           />
         </div>
@@ -100,7 +106,11 @@ const Navbar = () => {
               />
             </a>
 
-            <Tooltip anchorSelect=".my-anchor-element" place="top">
+            <Tooltip
+              anchorSelect=".my-anchor-element"
+              place="top"
+              className="bg-purple p-4"
+            >
               {user.displayName}
             </Tooltip>
             <button className="btn btn-secondary" onClick={handleSignOut}>
@@ -108,9 +118,15 @@ const Navbar = () => {
             </button>
           </div>
         ) : (
-          <Link to="/signin">
-            <button className="btn btn-secondary">Login </button>
-          </Link>
+          <div className=" flex gap-1">
+            <Link to="/signin" className="btn btn-secondary">
+              Login{" "}
+            </Link>
+
+            <Link to="signup" className="btn btn-accent">
+              Register{" "}
+            </Link>
+          </div>
         )}
       </div>
     </div>
