@@ -1,9 +1,28 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
+import { IoToggleSharp } from "react-icons/io5";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [theme, setTheme] = useState("light");
+
+  const handleTheme = (e) => {
+    if (e.target.checked) {
+      setTheme("synthwave");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
 
   const handleSignOut = () => {
     logOut().then().catch();
@@ -60,16 +79,30 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{listItems}</ul>
       </div>
       <div className="navbar-end">
+        <div className="text-5xl mr-4">
+          <input
+            type="checkbox"
+            onChange={handleTheme}
+            value="synthwave"
+            className="toggle flex items-center theme-controller bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2"
+          />
+        </div>
         {user ? (
           <div className="flex gap-3">
-            <img
-              alt="Tailwind CSS Navbar component"
-              className="w-12 h-12 rounded-full"
-              src={
-                user?.photoURL ||
-                "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              }
-            />
+            <a className="my-anchor-element">
+              <img
+                alt="Tailwind CSS Navbar component"
+                className="w-12 h-12 rounded-full"
+                src={
+                  user?.photoURL ||
+                  "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                }
+              />
+            </a>
+
+            <Tooltip anchorSelect=".my-anchor-element" place="top">
+              {user.displayName}
+            </Tooltip>
             <button className="btn btn-secondary" onClick={handleSignOut}>
               Sign Out{" "}
             </button>
