@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="font-raleway">
       <Navbar></Navbar>
       <div className="px-1 md:px-10">
         <Outlet></Outlet>
