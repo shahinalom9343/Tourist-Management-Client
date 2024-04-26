@@ -17,7 +17,10 @@ const Navbar = () => {
         <NavLink to="/about">About</NavLink>
       </li>
       <li>
-        <NavLink to="/spots">Tourist Spots</NavLink>
+        <NavLink to="/allspots">Tourist Spots</NavLink>
+      </li>
+      <li>
+        <NavLink to="/addspots">Add Tourist Spots</NavLink>
       </li>
     </>
   );
@@ -59,7 +62,10 @@ const Navbar = () => {
             <img
               alt="Tailwind CSS Navbar component"
               className="w-12 h-12 rounded-full"
-              src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              src={
+                user?.photoURL ||
+                "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+              }
             />
             <button className="btn btn-secondary" onClick={handleSignOut}>
               Sign Out{" "}

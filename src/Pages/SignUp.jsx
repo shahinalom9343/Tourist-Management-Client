@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -15,6 +17,15 @@ const SignUp = () => {
     const photoURL = form.photourl.value;
     const user = { name, email, photoURL };
     // console.log(user);
+
+    if (password.length < 6) {
+      toast("Password must be at least 6 characters");
+      return;
+    } else if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+      toast("Password must have at least 1 uppercase & 1 uppercase leeter");
+      return;
+    }
+
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
@@ -119,6 +130,7 @@ const SignUp = () => {
           Login
         </Link>
       </p>
+      <ToastContainer />
     </div>
   );
 };

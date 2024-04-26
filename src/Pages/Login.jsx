@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import {
@@ -14,22 +14,20 @@ import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 
 const Login = () => {
   const { logIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
   const githubProvider = new GithubAuthProvider();
 
-  // github login
-  const handleGithubLogIn = () => {
-    signInWithPopup(auth, githubProvider).then((result) => {
-      console.log(result.user);
-    });
-  };
-
-  // facebook login
-  const handleFacebookLogIn = () => {
-    signInWithPopup(auth, facebookProvider).then((result) => {
-      console.log(result.user);
+  // google login
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider).then((result) => {
+      const currentUser = result.user;
+      setUser(currentUser);
+      navigate(location?.state ? location.state : "/");
       Swal.fire({
         icon: "success",
         title: "Login Successful !!!",
@@ -39,10 +37,27 @@ const Login = () => {
     });
   };
 
-  // google login
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider).then((result) => {
-      console.log(result.user);
+  // github login
+  const handleGithubLogIn = () => {
+    signInWithPopup(auth, githubProvider).then((result) => {
+      const currentUser = result.user;
+      setUser(currentUser);
+      navigate(location?.state ? location.state : "/");
+      Swal.fire({
+        icon: "success",
+        title: "Login Successful !!!",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+    });
+  };
+
+  // facebook login
+  const handleFacebookLogIn = () => {
+    signInWithPopup(auth, facebookProvider).then((result) => {
+      const currentUser = result.user;
+      setUser(currentUser);
+      navigate(location?.state ? location.state : "/");
       Swal.fire({
         icon: "success",
         title: "Login Successful !!!",

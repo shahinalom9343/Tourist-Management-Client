@@ -5,6 +5,8 @@ import HomePage from "../Pages/HomePage";
 import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import About from "../Pages/About";
+import AllTouristSpot from "../Pages/AllTouristSpot";
+import AddTouristSpot from "../Pages/AddTouristSpot";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/allspots",
+        element: <AllTouristSpot></AllTouristSpot>,
+      },
+      {
+        path: "/addspots",
+        element: <AddTouristSpot></AddTouristSpot>,
       },
       {
         path: "/signin",
