@@ -65,7 +65,6 @@ const AddTouristSpot = () => {
       </Helmet>
       {user && (
         <div>
-          <h3>This is add tourist page</h3>
           <form
             className="space-y-6 px-20 py-4 rounded-xl bg-purple-200"
             onSubmit={handleAddSpot}
