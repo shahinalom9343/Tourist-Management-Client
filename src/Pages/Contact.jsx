@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
-    <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
+    <div className="grid max-w-screen-xl my-4 grid-cols-1 gap-8 px-8 py-16 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
       <Helmet>
         <title>Explore Asia | Contact</title>
       </Helmet>
@@ -63,7 +63,7 @@ const Contact = () => {
         <p className="pt-2 pb-4 font-bold text-xl text-center text-green-600">
           Fill in the form to start a conversation
         </p>
-        <div className="bg-red-50 rounded-xl">
+        <div className=" rounded-xl">
           <form noValidate="" className="space-y-6 p-4">
             <label htmlFor="name" className="text-lg">
               Full name
@@ -72,7 +72,7 @@ const Contact = () => {
               id="name"
               type="text"
               placeholder=""
-              className="w-full p-3 rounded dark:bg-gray-100"
+              className="w-full p-3 rounded border-2 shadow-lg dark:bg-gray-100"
             />
 
             <div>
@@ -82,7 +82,7 @@ const Contact = () => {
               <input
                 id="email"
                 type="email"
-                className="w-full p-3 rounded dark:bg-gray-100"
+                className="w-full p-3 rounded shadow-lg border-2 dark:bg-gray-100"
               />
             </div>
             <div>
@@ -92,7 +92,7 @@ const Contact = () => {
               <textarea
                 id="message"
                 rows="3"
-                className="w-full p-3 rounded dark:bg-gray-100"
+                className="w-full p-3 rounded border-2 shadow-lg dark:bg-gray-100"
               ></textarea>
             </div>
             <button

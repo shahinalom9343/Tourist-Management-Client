@@ -2,8 +2,14 @@ import { Helmet } from "react-helmet-async";
 import Countries from "../Components/Countries";
 import Banner from "../Components/Banner";
 import { useLoaderData } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const spots = useLoaderData();
   return (
     <div>
@@ -16,7 +22,7 @@ const HomePage = () => {
       </div>
 
       {/* Tourist spots section */}
-      <div>
+      <div data-aos="fade-up" data-aos-duration="3000">
         <div className="text-3xl font-bold text-cyan-500 text-center">
           All Tourist Spots{" "}
         </div>
