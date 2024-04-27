@@ -49,7 +49,7 @@ const SignUp = () => {
   return (
     <div className="w-full max-w-5xl shadow-2xl my-2 mx-auto md:px-16 py-4 lg:px-20 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
       <Helmet>
-        <title>Tourist | Register</title>
+        <title>Explore Asia | Register</title>
       </Helmet>
       <h1 className="text-2xl font-bold text-center text-cyan-400">
         Please Register Here

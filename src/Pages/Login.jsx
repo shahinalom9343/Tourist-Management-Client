@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { logIn } = useContext(AuthContext);
@@ -97,6 +98,9 @@ const Login = () => {
   };
   return (
     <div className="border-2 shadow-md w-full max-w-md p-4 rounded-md mx-auto my-10 sm:p-8 dark:bg-gray-50 dark:text-gray-800">
+      <Helmet>
+        <title>Explore Asia | Login</title>
+      </Helmet>
       <h2 className="mb-3 text-3xl font-bold text-center text-green-700">
         Login to your account
       </h2>

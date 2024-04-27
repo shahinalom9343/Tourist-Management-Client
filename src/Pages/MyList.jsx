@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 

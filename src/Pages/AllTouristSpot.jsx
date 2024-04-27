@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const AllTouristSpot = () => {
   const spots = useLoaderData();
   return (
     <div className="grid grid-cols-1 md:my-6 lg:my-10">
+      <Helmet>
+        <title>Explore Asia | All Spots</title>
+      </Helmet>
       <div>
         <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-900">
           All Tourists Spots : {spots.length}

@@ -74,7 +74,7 @@ const UpdateInfo = () => {
   return (
     <div className="px-6">
       <Helmet>
-        <title>Tourism | Update UserInfo</title>
+        <title>Explore Asia | Update UserInfo</title>
       </Helmet>
 
       <div>

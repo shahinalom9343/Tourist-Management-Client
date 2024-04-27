@@ -60,7 +60,7 @@ const AddTouristSpot = () => {
   return (
     <div className="px-6">
       <Helmet>
-        <title>Tourism | Add Spots</title>
+        <title>Explore Asia | Add Spots</title>
       </Helmet>
       {user && (
         <div>
@@ -188,7 +188,7 @@ const AddTouristSpot = () => {
                   <input
                     type="text"
                     name="name"
-                    placeholder="User Name"
+                    defaultValue={user.displayName}
                     className="input input-bordered input-accent w-full"
                   />
                 </div>
@@ -197,7 +197,7 @@ const AddTouristSpot = () => {
                   <input
                     type="email"
                     name="email"
-                    placeholder="Enter your Email"
+                    defaultValue={user.email}
                     className="input input-bordered input-accent w-full"
                   />
                 </div>
