@@ -1,9 +1,10 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateInfo = () => {
   const info = useLoaderData();
+  const navigate = useNavigate();
   const {
     _id,
     spot,
@@ -67,6 +68,8 @@ const UpdateInfo = () => {
             showConfirmButton: false,
             timer: 2000,
           });
+          form.reset();
+          navigate("/mylist");
         }
       });
   };
@@ -224,7 +227,9 @@ const UpdateInfo = () => {
             </div>
           </div>
           <div className="grid grid-cols-1">
-            <button className="btn btn-accent w-full">Update</button>
+            <button className="btn btn-accent text-xl font-semibold text-white w-full">
+              Update
+            </button>
           </div>
         </form>
       </div>

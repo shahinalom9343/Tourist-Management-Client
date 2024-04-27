@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import PrivateRoutes from "../Routes/PrivateRoutes";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -40,9 +41,11 @@ const Navbar = () => {
       <li>
         <NavLink to="/addspots">Add Tourist Spots</NavLink>
       </li>
-      <li>
-        <NavLink to="/mylist">My List</NavLink>
-      </li>
+      <PrivateRoutes>
+        <li>
+          <NavLink to="/mylist">My List</NavLink>
+        </li>
+      </PrivateRoutes>
       <li>
         <NavLink to="/contact">Contact</NavLink>
       </li>

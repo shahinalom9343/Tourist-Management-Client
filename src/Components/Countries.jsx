@@ -30,76 +30,62 @@ const Countries = () => {
           <p className="absolute text-5xl font-bold text-white top-28 left-6">
             Bangladesh
           </p>
-          <img
-            className="rounded-xl"
-            src="https://swiperjs.com/demos/images/nature-1.jpg"
-          />
+          <img className="rounded-xl" src="https://i.ibb.co/gzdJKbQ/bd.webp" />
         </SwiperSlide>
       </div>
       <Marquee speed={30} loop={Infinity} direction="left">
         <div className="relative">
           <SwiperSlide>
             <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
+              Thailand
             </p>
             <img
               className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              src="https://i.ibb.co/XCJnFHx/thailand.jpg"
             />
           </SwiperSlide>
         </div>
         <div className="relative">
           <SwiperSlide>
             <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
+              Indonesia
             </p>
             <img
               className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              src="https://i.ibb.co/WHNGkqS/ido.jpg"
             />
           </SwiperSlide>
         </div>
         <div className="relative">
           <SwiperSlide>
             <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
+              Malaysia
             </p>
             <img
               className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              src="https://i.ibb.co/3vz021F/wp1842875.jpg"
             />
           </SwiperSlide>
         </div>
         <div className="relative">
           <SwiperSlide>
             <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
+              Vietnam
             </p>
             <img
               className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              src="https://i.ibb.co/kxHJ1q1/vietnam.jpg"
             />
           </SwiperSlide>
         </div>
         <div className="relative">
           <SwiperSlide>
             <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
+              Cambodia
             </p>
             <img
               className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
-            />
-          </SwiperSlide>
-        </div>
-        <div className="relative">
-          <SwiperSlide>
-            <p className="absolute text-5xl font-bold text-white top-28 left-6">
-              Bangladesh
-            </p>
-            <img
-              className="rounded-xl"
-              src="https://swiperjs.com/demos/images/nature-1.jpg"
+              src="https://i.ibb.co/4JBNZDW/cambodia.jpg"
             />
           </SwiperSlide>
         </div>

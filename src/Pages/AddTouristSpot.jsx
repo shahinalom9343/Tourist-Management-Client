@@ -54,6 +54,7 @@ const AddTouristSpot = () => {
             showConfirmButton: false,
             timer: 2000,
           });
+          form.reset();
         }
       });
   };
@@ -215,7 +216,9 @@ const AddTouristSpot = () => {
               </div>
             </div>
             <div className="grid grid-cols-1">
-              <button className="btn btn-accent w-full">Add</button>
+              <button className="py-2 bg-green-800 w-full font-bold text-white text-xl">
+                Add
+              </button>
             </div>
           </form>
         </div>

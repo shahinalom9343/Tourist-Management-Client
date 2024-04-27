@@ -91,7 +91,7 @@ const MyList = () => {
                     <td className="p-3">
                       <Link
                         to={`updateInfo/${mySpot._id}`}
-                        className="btn btn-success"
+                        className="btn btn-success text-white"
                       >
                         Update
                       </Link>
