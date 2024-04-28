@@ -11,6 +11,7 @@ import Contact from "../Pages/Contact";
 import MyList from "../Pages/MyList";
 import UpdateInfo from "../Pages/UpdateInfo";
 import PrivateRoutes from "../Routes/PrivateRoutes";
+import ViewDetails from "../Pages/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,16 @@ const router = createBrowserRouter([
       {
         path: "/mylist/updateInfo/:id",
         element: <UpdateInfo></UpdateInfo>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/spots/${params.id}`),
+      },
+      {
+        path: "/viewdetails/:id",
+        element: (
+          <PrivateRoutes>
+            <ViewDetails></ViewDetails>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/spots/${params.id}`),
       },

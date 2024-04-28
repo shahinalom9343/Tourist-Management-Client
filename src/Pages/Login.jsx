@@ -101,12 +101,12 @@ const Login = () => {
       <Helmet>
         <title>Explore Asia | Login</title>
       </Helmet>
-      <h2 className="mb-3 text-3xl font-bold text-center text-green-700">
+      <h2 className="mb-8 text-3xl font-bold text-center text-green-700">
         Login to your account
       </h2>
-      <form className="space-y-8 " onSubmit={handleSignIn}>
-        <div className="space-y-4">
-          <div className="space-y-2">
+      <form className="space-y-2" onSubmit={handleSignIn}>
+        <div className="space-y-2">
+          <div>
             <label htmlFor="email" className="block text-lg font-medium">
               Email address
             </label>
@@ -119,7 +119,7 @@ const Login = () => {
               className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
           </div>
-          <div className="space-y-2">
+          <div>
             <div className="flex justify-between">
               <label htmlFor="password" className="text-lg font-medium">
                 Password
@@ -148,7 +148,7 @@ const Login = () => {
         <hr className="w-full dark:text-gray-600" />
       </div>
 
-      <div className="my-6 space-y-4  ">
+      <div className="my-3 space-y-1">
         <button
           onClick={handleGoogleSignIn}
           type="button"
