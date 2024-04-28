@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContext);
   const spot = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>Explore Asia | ViewDetails</title>
+      </Helmet>
       {user && (
         <div className="container py-2 mx-auto lg:px-3 lg:max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-5">
@@ -48,7 +52,7 @@ const ViewDetails = () => {
               <p className="text-base">
                 <span className="text-blue-600 font-bold">
                   {" "}
-                  Short Description:
+                  Short Descriptions:
                 </span>{" "}
                 {spot.description}
               </p>

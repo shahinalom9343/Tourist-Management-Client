@@ -51,7 +51,7 @@ const UpdateInfo = () => {
     };
     // console.log(spots);
     // send spot data to the server
-    fetch(`http://localhost:5000/spots/${_id}`, {
+    fetch(`https://tourism-management-server-eight.vercel.app/spots/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

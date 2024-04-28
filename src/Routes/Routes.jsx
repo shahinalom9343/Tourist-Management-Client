@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () =>
+          fetch("https://tourism-management-server-eight.vercel.app/spots"),
       },
       {
         path: "/about",
@@ -31,7 +32,8 @@ const router = createBrowserRouter([
       {
         path: "/allspots",
         element: <AllTouristSpot></AllTouristSpot>,
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () =>
+          fetch("https://tourism-management-server-eight.vercel.app/spots"),
       },
       {
         path: "/addspots",
@@ -45,7 +47,9 @@ const router = createBrowserRouter([
         path: "/mylist/updateInfo/:id",
         element: <UpdateInfo></UpdateInfo>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(
+            `https://tourism-management-server-eight.vercel.app/spots/${params.id}`
+          ),
       },
       {
         path: "/viewdetails/:id",
@@ -55,12 +59,15 @@ const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/spots/${params.id}`),
+          fetch(
+            `https://tourism-management-server-eight.vercel.app/spots/${params.id}`
+          ),
       },
       {
         path: "/mylist",
         element: <MyList></MyList>,
-        loader: () => fetch("http://localhost:5000/spots"),
+        loader: () =>
+          fetch("https://tourism-management-server-eight.vercel.app/spots"),
       },
 
       {

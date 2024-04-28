@@ -1,6 +1,6 @@
 # Explore Asia
 
-Live website URL :
+Live website URL : https://tourist-management-e1622.web.app/
 
 Various features are available on this websites are:
 
@@ -11,3 +11,7 @@ Various features are available on this websites are:
 5. Implementation of dark and light mode here.
 6. Uses of Raleway google fonts here
 7. Selected category : "Southeast Asia"
+8. Used packages are :
+   a. Swiper.js
+   b. AOS animation
+   c. React lottie etc
