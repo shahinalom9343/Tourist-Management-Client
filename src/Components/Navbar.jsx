@@ -52,7 +52,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-red-50 shadow-xl font-bold md:px-10">
+    <div className="navbar bg-red-50 dark:bg-white dark:text-yellow-800 text-yellow-8000  shadow-xl font-bold md:px-10">
       <div className="navbar-start">
         <div className="dropdown z-10">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -119,7 +119,10 @@ const Navbar = () => {
             >
               {user.displayName}
             </Tooltip>
-            <button className="btn btn-secondary" onClick={handleSignOut}>
+            <button
+              className="btn btn-secondary text-white font-semibold"
+              onClick={handleSignOut}
+            >
               Sign Out{" "}
             </button>
           </div>

@@ -38,7 +38,7 @@ const HomePage = () => {
                   <h2 className=" text-3xl">{spot.spot}</h2>
                   <h2 className=" text-xl">Country : {spot.country}</h2>
                 </div>
-                <div className="flex justify-between mr-3 mb-3">
+                <div className="flex justify-between mr-3">
                   <p>Location : {spot.location}</p>
                   <p>Cost : {spot.cost}</p>
                 </div>

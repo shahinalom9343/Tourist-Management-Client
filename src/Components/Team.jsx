@@ -1,6 +1,6 @@
 const Team = () => {
   return (
-    <section className="py-6 dark:bg-gray-100 dark:text-gray-800">
+    <section className="border-2 rounded-xl py-6 dark:bg-gray-100 dark:text-gray-800">
       <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-4 sm:p-10">
         <h1 className="text-4xl text-teal-500 font-bold leading-none text-center sm:text-5xl">
           Our team

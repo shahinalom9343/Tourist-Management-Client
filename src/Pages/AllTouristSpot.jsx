@@ -5,7 +5,7 @@ import { FaLocationDot } from "react-icons/fa6";
 const AllTouristSpot = () => {
   const spots = useLoaderData();
   return (
-    <div className="grid grid-cols-1 md:my-6 lg:my-10">
+    <div className=" md:my-6 lg:my-10">
       <Helmet>
         <title>Explore Asia | All Spots</title>
       </Helmet>
@@ -14,59 +14,68 @@ const AllTouristSpot = () => {
           All Tourists Spots : {spots.length}
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {spots.map((spot) => (
-          <section
+          <div
             key={spot._id}
-            className="dark:bg-gray-100 dark:text-gray-800 shadow-xl border-2 rounded-xl mx-2 my-1"
+            className=" dark:bg-gray-100 dark:text-gray-800 shadow-xl border-2 rounded-xl mx-2 my-1"
           >
-            <div className="container py-2 mx-auto lg:px-3 lg:max-w-7xl">
-              <div className="grid grid-cols-1 md:grid-cols-5">
-                <div className="cols-span-1 space-y-2 md:my-4 md:col-span-3 md: ml-5 lg:ml-16">
+            <div className="container mx-auto lg:max-w-7xl">
+              <div className="flex flex-col-reverse">
+                <div className="space-y-2 md:col-span-3 bg-slate-300 p-4">
                   <h3 className="text-xl font-bold sm:text-2xl dark:text-gray-900">
-                    <span className="text-orange-500"> Spot Name :</span>{" "}
+                    <span className="text-orange-600"> Spot Name :</span>{" "}
                     {spot.spot}
                   </h3>
-                  <p className="text-lg">
-                    <span className="text-orange-600">Cost ($) :</span>{" "}
+                  <p className="">
+                    <span className="text-base font-bold">Cost ($) :</span>{" "}
                     {spot.cost}
                   </p>
-                  <p className="text-lg">
-                    <span className="text-orange-600">Visitors/year :</span>{" "}
+                  <p className="">
+                    <span className=" text-base font-bold">
+                      Visitors/year :
+                    </span>{" "}
                     {spot.visitors}
                   </p>
-                  <p className="mt-3 text-lg dark:text-gray-600">
-                    Average Cost:{spot.cost}
+                  <p className="">
+                    <span className="text-base font-bold">
+                      Average Cost ($) :
+                    </span>
+                    {spot.cost}
                   </p>
-                  <p className="mt-3 flex gap-1 text-lg dark:text-gray-600">
-                    Location (<FaLocationDot />
-                    ): {spot.location}
+                  <p className="">
+                    <span className="text-base font-bold">Location</span>:{" "}
+                    {spot.location}
                   </p>
-                  <p className="mt-3 text-lg dark:text-gray-600">
-                    Season:{spot.season}
+                  <p className="">
+                    <span className="text-base font-bold">Season :</span>
+                    {spot.season}
                   </p>
-                  <p className="mt-3 text-lg dark:text-gray-600">
-                    Travel Time (in days):{spot.time}
+                  <p className="">
+                    <span className="text-base font-bold">
+                      Travel Time (in days)
+                    </span>
+                    :{spot.time}
                   </p>
                   <div>
                     <Link
                       to={`/viewdetails/${spot._id}`}
-                      className="btn text-xl font-bold btn-primary"
+                      className="btn text-xl w-full font-bold btn-primary"
                     >
                       View Details
                     </Link>
                   </div>
                 </div>
-                <div className="cols-span-1 md:col-span-2">
+                <div className="md:col-span-2">
                   <img
                     src={spot.photoURL}
                     alt=""
-                    className="mx-auto rounded-lg my-4  shadow-lg dark:bg-gray-500"
+                    className="mx-auto h-72 w-full dark:bg-gray-500"
                   />
                 </div>
               </div>
             </div>
-          </section>
+          </div>
         ))}
       </div>
     </div>

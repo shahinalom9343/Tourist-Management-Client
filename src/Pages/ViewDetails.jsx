@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContext);
@@ -13,42 +13,53 @@ const ViewDetails = () => {
             <div className="cols-span-1 md:col-span-2">
               <img
                 src={spot.photoURL}
-                alt=""
+                alt="spot"
                 className="mx-auto rounded-lg my-4  shadow-lg dark:bg-gray-500"
               />
             </div>
             <div className="cols-span-1 space-y-2 md:my-4 md:col-span-3 md: ml-5 lg:ml-16">
-              <h3 className="text-xl font-bold sm:text-2xl dark:text-gray-900">
-                <span className="text-orange-500"> Spot Name :</span>{" "}
+              <h3 className="text-2xl sm:text-2xl dark:text-gray-900">
+                <span className="text-blue-600 font-bold"> Spot Name:</span>{" "}
                 {spot.spot}
               </h3>
-              <p className="text-lg">
-                <span className="text-orange-600">Cost ($) :</span> {spot.cost}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">Country_Name:</span>{" "}
+                {spot.country}
               </p>
-              <p className="text-lg">
-                <span className="text-orange-600">Visitors/year :</span>{" "}
-                {spot.visitors}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">Location:</span>{" "}
+                {spot.location}
               </p>
-              <p className="mt-3 text-lg dark:text-gray-600">
-                Average Cost:{spot.cost}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">Cost($) :</span>{" "}
+                {spot.cost}
               </p>
-              <p className="mt-3 flex gap-1 text-lg dark:text-gray-600">
-                Location : {spot.location}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">Season :</span>{" "}
+                {spot.season}
               </p>
-              <p className="mt-3 text-lg dark:text-gray-600">
-                Season:{spot.season}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">
+                  {" "}
+                  Travel Time (in days):
+                </span>{" "}
+                {spot.time}
               </p>
-              <p className="mt-3 text-lg dark:text-gray-600">
-                Travel Time (in days):{spot.time}
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">
+                  {" "}
+                  Short Description:
+                </span>{" "}
+                {spot.description}
               </p>
-              <div>
-                <Link
-                  to={`/viewdetails/${spot._id}`}
-                  className="btn text-xl font-bold btn-primary"
-                >
-                  View Details
-                </Link>
-              </div>
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">UserName:</span>{" "}
+                {user.displayName}
+              </p>
+              <p className="text-base">
+                <span className="text-blue-600 font-bold">User Email:</span>{" "}
+                {user.email}
+              </p>
             </div>
           </div>
         </div>
