@@ -28,7 +28,7 @@ const HomePage = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
           {spots.slice(0, 6).map((spot) => (
-            <div className="card glass scale-105" key={spot._id}>
+            <div className="card glass" key={spot._id}>
               <figure className="h-52 w-full">
                 <img src={spot.photoURL} alt="Spot image" />
               </figure>
