@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
-import { FaLocationDot } from "react-icons/fa6";
 
 const AllTouristSpot = () => {
   const spots = useLoaderData();
